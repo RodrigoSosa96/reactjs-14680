@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import ItemCount from './components/ItemCount';
 import ItemListContainer from './components/ItemListContainer';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
         <>
         <Header/>
         <ItemListContainer />
+        <ItemCount initial={1} stock={5} />
         </>
 
     );
