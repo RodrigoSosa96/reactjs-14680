@@ -1,20 +1,16 @@
-import AsyncTest from './components/AsyncTest';
-import Header from './components/Header';
-import Item from './components/Item';
-import ItemCount from './components/ItemCount';
-import ItemListContainer from './components/ItemListContainer';
+import Header from "./components/Header";
+import ItemCount from "./components/items/ItemCount";
+import ItemListContainer from "./components/items/ItemListContainer";
+import ItemDetailContainer from "./components/items/ItemDetailContainer"
 
 function App() {
-    return (
-        <>
-        <Header/>
-        <ItemListContainer />
-        <ItemCount initial={1} stock={5} />
-        <AsyncTest/>
-        <Item/>
-        </>
-
-    );
+	return (
+		<>
+			<Header />
+			<ItemCount initial={1} stock={5} />
+			<ItemListContainer />
+		</>
+	);
 }
 
 export default App;
