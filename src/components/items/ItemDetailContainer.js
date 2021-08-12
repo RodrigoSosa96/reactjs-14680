@@ -1,39 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
+import Productos from "../Productos";
 
 const ItemDetailContainer = () => {
-	const [products, setProducts] = useState();
-	const fetchSettings = {
-		async: true,
-		crossDomain: true,
-		url: "https://api.jsonbin.io/v3/b/60c84bb098ca6c704eb055fc/latest",
-		method: "GET",
-		headers: {
-			"X-Master-Key":
-				"$2b$10$N436g4d/8eI82cQnCZKRNeru8F/lrwBlQXjP9ZVGpx5rVJ37jF0kG",
-		},
-		data: {},
-	};
-	const getItems = fetch(
-		"https://api.jsonbin.io/v3/b/60c84bb098ca6c704eb055fc/latest",
-		{
-			method: "get",
-			headers: new Headers({
-				"X-Master-Key": "$2b$10$N436g4d/8eI82cQnCZKRNeru8F/lrwBlQXjP9ZVGpx5rVJ37jF0kG",
-				"Content-Type": "application/x-www-form-urlencoded",
-			}),
-			data: {},
-		}
-	);
-    getItems.then(r => console.log(r))
-	getItems.then((fetchedProducts) => {
-		setProducts(fetchedProducts);
-	});
+	const [products, setProducts] = useState(0);
+	const params = useParams();
 
+	useEffect(() => {
+		const promesa  = getItems()
+		promesa.then((fetchedProducts) => {
+			setProducts(fetchedProducts);
+		});
+	}, [params]);
+
+	const getItems = () => {
+		const promesa = new Promise((res, rej) => {
+			setTimeout(() => {
+					res(Productos.filter((prod) => prod.id === params.id))
+					console.log(Productos)
+
+			}, 2000);
+		});
+		return promesa
+	}
 	return (
-        <>
-        <ItemDetail items={products} />
-        </>
+		<>
+			<ItemDetail items={products} />
+		</>
 	);
 };
 

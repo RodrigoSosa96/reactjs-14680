@@ -1,15 +1,27 @@
 import Header from "./components/Header";
-import ItemCount from "./components/items/ItemCount";
+
 import ItemListContainer from "./components/items/ItemListContainer";
-import ItemDetailContainer from "./components/items/ItemDetailContainer"
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ItemDetailContainer from "./components/items/ItemDetailContainer";
 
 function App() {
 	return (
-		<>
+		<BrowserRouter>
 			<Header />
-			<ItemCount initial={1} stock={5} />
-			<ItemListContainer />
-		</>
+			<Switch>
+				<Route path="/" exact>
+					<>
+					hola
+					</>
+				</Route>
+				<Route path="/categoria/:id">
+					<ItemListContainer/>
+				</Route>
+				<Route path="/item/:id">
+					<ItemDetailContainer/>
+				</Route>
+			</Switch>
+		</BrowserRouter>
 	);
 }
 

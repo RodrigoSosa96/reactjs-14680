@@ -1,5 +1,5 @@
 const Productos =     [
-    {id: 1, categoria: "Fernet",marca: "Branca",features: "1lt",precio: 750, stock: 10, urlImg: "https://raw.githubusercontent.com/rodrigo96s/Javascript14390--rodrigo/main/Proyectos-finales/ProyectoFinalV2/assets/img/fernet-branca.jpg"},
+    {id: "1", categoria: "Fernet",marca: "Branca",features: "1lt",precio: 750, stock: 10, urlImg: "https://raw.githubusercontent.com/rodrigo96s/Javascript14390--rodrigo/main/Proyectos-finales/ProyectoFinalV2/assets/img/fernet-branca.jpg"},
     {id: 2, categoria: "Fernet",marca: "1882",features: "500ml",precio: 350, stock: 10, urlImg: "https://raw.githubusercontent.com/rodrigo96s/Javascript14390--rodrigo/main/Proyectos-finales/ProyectoFinalV2/assets/img/fernet-1882.jpg"},
     {id: 3, categoria: "Vodka",marca: "Absolut",features: "500ml",precio: 900, stock: 10, urlImg: "https://raw.githubusercontent.com/rodrigo96s/Javascript14390--rodrigo/main/Proyectos-finales/ProyectoFinalV2/assets/img/vodka-absolut.jpg"},
     {id: 4, categoria: "Vodka",marca: "Sky",features: "750ml","precio": 500,"stock": 10, urlImg: "https://raw.githubusercontent.com/rodrigo96s/Javascript14390--rodrigo/main/Proyectos-finales/ProyectoFinalV2/assets/img/vodka-sky.png"},
