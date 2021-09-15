@@ -1,27 +1,29 @@
-import Header from "./components/Header";
-
-import ItemListContainer from "./components/items/ItemListContainer";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ItemDetailContainer from "./components/items/ItemDetailContainer";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Navbar from "./components/header/Navbar";
+import GlobalStyle from "./GlobalStyles.styles";
+import './fonts.css'
+import ItemListContainer from "./components/itemList/ItemListContainer";
+import ItemDetailContainer from "./components/itemDetail/ItemDetailContainer";
 
 function App() {
 	return (
-		<BrowserRouter>
-			<Header />
-			<Switch>
-				<Route path="/" exact>
-					<>
-					hola
-					</>
-				</Route>
-				<Route path="/categoria/:id">
-					<ItemListContainer/>
-				</Route>
-				<Route path="/item/:id">
-					<ItemDetailContainer/>
-				</Route>
-			</Switch>
-		</BrowserRouter>
+		<>
+			<BrowserRouter>
+				<Navbar />
+				<Switch>
+					<Route exact path='/'>
+                        <ItemListContainer/>
+					</Route>
+					<Route path='/productos'>
+						<ItemListContainer/>
+					</Route>
+					<Route path='/item/:id'>
+						<ItemDetailContainer/>
+					</Route>
+				</Switch>
+			</BrowserRouter>
+			<GlobalStyle />
+		</>
 	);
 }
 
